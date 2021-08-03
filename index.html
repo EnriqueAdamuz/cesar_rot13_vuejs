@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div id="app">
+			<main class="container mx-auto p-6">
+				<h1 class="text-center font-bold text-2xl mb-4">Cesar ROT13 Encoder / Decoder</h1>
+				<article class="flex justify-center mb-4">
+					<form @submit.prevent="encodeText()" class="w-2/5 content-center flex flex-col">
+						<input
+							class="mb-3 w-full border border-gray-200 p-2 rounded-md"
+							type="text"
+							placeholder="Text to encode ..."
+							v-model="textToEncode"
+						/>
+						<input class="w-2/5 self-center p-2 bg-blue-500 text-white rounded-md" type="submit" value="Encode / Decode" />
+					</form>
+				</article>
+				<section class="mb-4" v-if="textEncode">
+					<h2 class="text-center">Result</h2>
+					<h2 class="p-2 border border-gray-300 rounded-md w-2/5 mx-auto text-center font-bold text-3xl mt-2">{{textEncode}}</h2>
+				</section>
+			</main>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="../app.js"></script>
+	</body>
+</html>
